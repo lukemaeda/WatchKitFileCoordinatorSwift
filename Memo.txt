@@ -1,0 +1,26 @@
+
+iOS でオブジェクトをシリアライズしてファイルに保存する方法Add Staryonishiy
+http://d.hatena.ne.jp/glass-_-onion/20110904/1315145330
+
+シリアライズって何？
+オブジェクトの状態をバイナリ(0と1の集まり)に変換することをオブジェクトのシリアライズまたはシリアル化といいます。
+逆にバイナリをオブジェクトに変換することをデシリアライズといいます。
+シリアライズされたデータは iOS 上では NSData オブジェクトとしてあつかわれます。
+NSData オブジェクトはそのままファイルに保存することができます。
+iOS ではシリアライズすることをアーカイブ、デシリアライズすることをアンアーカイブといいます。
+それぞれアーカイブのための NSKeyedArchiver クラスとアンアーカイブのための NSKeyedUnarchiver クラスが提供されています。
+
+ObjCからSwiftに書きなおす際にNSCodingがうまく動かない（解決済）
+http://qiita.com/noppefoxwolf/items/f8edb32d435b1894cc4c
+
+Swiftでのデータ永続化
+http://wonderpla.net/blog/engineer/Swift_DataPersistence/
+
+Data Persistence with NSCoding in Swift
+http://tomdiggle.com/blog/2014/12/08/data-persistence-with-nscoding-in-swift/
+
+let data: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(filepath)
+
+let data: String? = NSKeyedUnarchiver.unarchiveObjectWithData(savedData) as? String
+
+
